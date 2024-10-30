@@ -1,57 +1,55 @@
 import { getImageUrl } from './utils.js';
+import Profile from './ProfileNew.js';
 
+/*
+//Otra forma de hacerlo, lo cogemos en el PROFILE2(En nuestra aplicación, esto lo cogeriamos de la base de datos)
+const persona1 ={
+  name:"Maria Skłodowska-Curie",
+  codeImg:"szV5sdG",
+  profesion:"física y química",
+  premios:["Premio Nobel de Física, Premio Nobel de Química, Medalla Davy, Medalla Matteucci"],
+  descubrimientos:"polonio (elemento químico)"
+}
+
+export default function Profile2({persona}) {
+  return (
+    <section className='Profile'>
+        <h1>{persona.name}</h1>
+        <img 
+        className="Avatar"
+        src={getImageUrl(persona.codeImg)}
+        alt={persona.name}
+        width={70}
+        height={70}
+        />
+        <ul>
+            <li>
+              <b>Profesion:</b>
+              {persona.profesion}   
+            </li>
+            <li>
+                <b>Premios: {persona.premios.length} </b>
+                {persona.premios.join(", ")}
+            </li>
+            <li>
+                <b>Descubrió: </b>
+                {persona.descubrimientos}
+            </li>
+        </ul>
+
+    </section>
+  );
+}
+*/
+//<Profile2 persona={persona1}/>
 export default function Gallery() {
   return (
     <div>
       <h1>Científicos Notables</h1>
-      <section className="profile">
-        <h2>Maria Skłodowska-Curie</h2>
-        <img
-          className="avatar"
-          src={getImageUrl('szV5sdG')}
-          alt="Maria Skłodowska-Curie"
-          width={70}
-          height={70}
-        />
-        <ul>
-          <li>
-            <b>Profesión: </b> 
-            física y química
-          </li>
-          <li>
-            <b>Premios: 4 </b> 
-            (Premio Nobel de Física, Premio Nobel de Química, Medalla Davy, Medalla Matteucci)
-          </li>
-          <li>
-            <b>Descubrió: </b>
-            polonio (elemento químico)
-          </li>
-        </ul>
-      </section>
-      <section className="profile">
-        <h2>Katsuko Saruhashi</h2>
-        <img
-          className="avatar"
-          src={getImageUrl('YfeOqp2')}
-          alt="Katsuko Saruhashi"
-          width={70}
-          height={70}
-        />
-        <ul>
-          <li>
-            <b>Profesión: </b> 
-            geoquímica
-          </li>
-          <li>
-            <b>Premios: 2 </b> 
-            (Premio Miyake de geoquímica, Premio Tanaka)
-          </li>
-          <li>
-            <b>Descubrió: </b>
-            un método para medir el dióxido de carbono en el agua de mar
-          </li>
-        </ul>
-      </section>
+      
+      <Profile name="Maria Skłodowska-Curie" codeImg="szV5sdG" profesion="física y química" numeroPremios="4" premios="Premio Nobel de Física, Premio Nobel de Química, Medalla Davy, Medalla Matteucci" descubrimientos="polonio (elemento químico)"/>
+      <Profile name="Katsuko Saruhashi" codeImg="YfeOqp2" profesion="geoquímica" numeroPremios="2" premios="Premio Miyake de geoquímica, Premio Tanaka" descubrimientos="un método para medir el dióxido de carbono en el agua de mar"/>
+      
     </div>
   );
 }
